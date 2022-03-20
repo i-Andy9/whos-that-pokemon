@@ -3,12 +3,12 @@
     <h1 v-if="!pokemon"> espere por favor...</h1>
     <div v-else>
       <h1> ¿Cual es este pokemón?</h1>
-      <pokemonPicture 
+      <PokemonPictureVue 
         :pokeId='pokemon.id' 
         :showPokemon='showPokemon'
       />
       
-      <pokemonOptions 
+      <PokemonOptionsVue 
         :pokemonL="pokemonOptionArr"
         :control="disableBtn"
         @selection="checkAnswer"
@@ -21,14 +21,14 @@
 </template>
 
 <script>
-    import PokemonPictureVue from '@/components/PokemonPicture.vue'
-    import PokemonPicture from '@/components/PokemonPicture.vue'
-    import PokemonOptions from '@/components/PokemonOptions.vue'
+     
     import getPokemonOption from '@/Helpers/getPokemonOptions.js'
- 
+import PokemonOptionsVue from '@/Components/PokemonOptions.vue'
+import PokemonPictureVue from '@/Components/PokemonPicture.vue'
+     
 
     export default {
-      components: { PokemonPicture, PokemonOptions, PokemonPictureVue, },
+      components: { PokemonPictureVue,PokemonOptionsVue  },
       data(){
         return {
           pokemonOptionArr: [],
